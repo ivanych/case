@@ -23,7 +23,7 @@ jobs:
         run: mkdir .build
 
       - name: Decode
-        run: python zippey/zippey.py -d < case.FCStd > .build/case.FCStd
+        run: python zippey/zippey.py decode < case.FCStd > .build/case.FCStd
 
       - name: Artifacts
         uses: actions/upload-artifact@v4
