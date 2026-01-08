@@ -1,0 +1,23 @@
+name: Development
+
+on:
+  push
+    #branches: [ "master" ]
+
+jobs:
+
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: echo test
+
+      - name: Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: case-${{ github.ref_name }}.FCStd
+          path: case.FCStd
