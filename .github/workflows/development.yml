@@ -11,13 +11,22 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+	uses: actions/checkout@v4
+
+      - name: Checkout zippey
+	uses: actions/checkout@v4
+	with:
+	    repository: rockstorm101/zippey
+	    path: zippey
+
+      - name: Mkdir
+	run mkdir .build
 
       - name: Build
-        run: echo test
+        run: python zippey/zippey.py -d < case.FCStd > .build/case.FCStd
 
       - name: Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: case-${{ github.ref_name }}.FCStd
-          path: case.FCStd
+          name: case-${{ github.ref_name }}
+          path: .build/.case.FCStd
