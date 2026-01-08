@@ -2,7 +2,7 @@ name: Development
 
 on:
   push
-    #branches: [ "master" ]
+#branches: [ "master" ]
 
 jobs:
 
@@ -11,18 +11,18 @@ jobs:
 
     steps:
       - name: Checkout
-	uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Checkout zippey
-	uses: actions/checkout@v4
-	with:
-	    repository: rockstorm101/zippey
-	    path: zippey
+        uses: actions/checkout@v4
+        with:
+          repository: rockstorm101/zippey
+          path: zippey
 
       - name: Mkdir
-	run mkdir .build
+        run: mkdir .build
 
-      - name: Build
+      - name: Decode
         run: python zippey/zippey.py -d < case.FCStd > .build/case.FCStd
 
       - name: Artifacts
