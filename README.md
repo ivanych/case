@@ -16,3 +16,6 @@ FreeCAD сохраняет файлы в формате **.FCStd**. Это би�
 
 Для кодирования/декодирования используется утилита
 [zippey](https://github.com/rockstorm101/zippey).
+
+Готовый декодированный файл в настоящем формате **.FCStd** можно скачать
+в [релизах](https://github.com/ivanych/case/releases).
